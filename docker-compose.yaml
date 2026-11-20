@@ -1,0 +1,11 @@
+services:
+  tiktok-shop-scraper:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      # TikTok Shop answers US addresses only: in the US, leave this unset;
+      # anywhere else, use a US datacenter proxy.
+      # - TIKTOK_SHOP_PROXY=http://user:pass@host:port
